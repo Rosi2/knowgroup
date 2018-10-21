@@ -27,6 +27,18 @@ public class login extends Fragment {
         final TextInputEditText passwordEditText = view.findViewById(R.id.password_edit_text);
         MaterialButton nextButton = view.findViewById(R.id.next_button);
 
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!isPasswordValid(passwordEditText.getText())) {
+                    passwordTextInput.setError(getString(R.string.shr_error_password));
+                } else {
+                    passwordTextInput.setError(null); // Clear the error
+                    ((NavigationHost) getActivity()).navigateTo(new ListaCursos(), false); // Navigate to the next Fragment
+                }
+            }
+        });
+
 
 
         // Clear the error once more than 8 characters are typed.
@@ -42,7 +54,9 @@ public class login extends Fragment {
         return view;
     }
 
+
+    //Validacion de la clave
     private boolean isPasswordValid(@Nullable Editable text) {
-        return text != null && text.length() >= 8;
+        return true;
     }
 }
