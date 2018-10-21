@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Know Group</string>
-    <string name="shr_hint_username">Correo</string>
-    <string name="shr_hint_password">Contraseña</string>
-    <string name="shr_button_next">Siguiente</string>
-    <string name="shr_button_cancel">Cancelar</string>
-    <string name="shr_error_password">Contraseña debe contener 8 caracteres o mas.</string>
-</resources>
