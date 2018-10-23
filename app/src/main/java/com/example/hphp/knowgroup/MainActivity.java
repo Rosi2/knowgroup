@@ -26,6 +26,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthActionCodeException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import java.util.regex.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -87,16 +88,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        final String emailo = TextEmail.getText().toString().trim();
                         //checking if success
-                        if(task.isSuccessful()){
+                        if (emailo.matches("[A-Za-z].*?@sansano\\.usm\\.cl")||emailo.matches("[A-Za-z].*?@alumnos\\.usm\\.cl")){
+                            if(task.isSuccessful()){
 
-                            Toast.makeText(MainActivity.this,"Se ha registrado el usuario con el email: "+ TextEmail.getText(),Toast.LENGTH_LONG).show();
-                        }else{
-                            if(task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                Toast.makeText(MainActivity.this, "Ese usuario ya existe ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this,"Se ha registrado el usuario con el email: "+ TextEmail.getText(),Toast.LENGTH_LONG).show();
                             }else{
-                                Toast.makeText(MainActivity.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
+                                if(task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                    Toast.makeText(MainActivity.this, "Ese usuario ya existe ", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(MainActivity.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
+                                }
                             }
+                        }
+                        else{
+                            Toast.makeText(MainActivity.this, "Debe ingresar correo institucional ", Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }
