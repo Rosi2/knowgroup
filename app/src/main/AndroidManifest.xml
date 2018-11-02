@@ -17,7 +17,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".WellcomeActivity" />
-        <activity android:name=".ListaRamos"></activity>
+        <activity android:name=".ListaRamos" />
+        <activity
+            android:name=".GrupoListActivity"
+            android:label="@string/title_grupo_list"></activity>
+        <activity
+            android:name=".GrupoDetailActivity"
+            android:label="@string/title_grupo_detail"
+            android:parentActivityName=".GrupoListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.hphp.knowgroup.GrupoListActivity" />
+        </activity>
     </application>
 
 </manifest>
