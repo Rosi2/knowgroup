@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //defining view objects
     private EditText TextEmail;
     private EditText TextPassword;
+    private EditText TextPassConfirm;
     private Button btnRegistrar, btnLogin;
     private ProgressDialog progressDialog;
 
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Referenciamos los views
         TextEmail = (EditText) findViewById(R.id.email);
         TextPassword = (EditText) findViewById(R.id.contrasena);
+        TextPassConfirm = (EditText) findViewById(R.id.cont_confirm);
 
         btnRegistrar = (Button) findViewById(R.id.registro);
         btnLogin= (Button) findViewById(R.id.login);
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Obtenemos el email y la contraseña desde las cajas de texto
         String email = TextEmail.getText().toString().trim();
         String password  = TextPassword.getText().toString().trim();
+        String passConfirm = TextPassConfirm.getText().toString().trim();
 
         //Verificamos que las cajas de texto no esten vacías
         if(TextUtils.isEmpty(email)){
@@ -76,6 +79,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(TextUtils.isEmpty(password)){
             Toast.makeText(this,"Falta ingresar la contraseña",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(TextUtils.isEmpty(passConfirm)){
+            Toast.makeText(this,"Falta confirmar la contraseña",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(!passConfirm.equals(password)){
+            Toast.makeText(this,"Contraseñas no coinciden",Toast.LENGTH_LONG).show();
             return;
         }
 
