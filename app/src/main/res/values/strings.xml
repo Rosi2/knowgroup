@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">knowGroup</string>
-    <string name="registro">Registrarse</string>
-    <string name="email">Ingrese Email</string>
-    <string name="contrasena">Ingrese Contrasena</string>
-    <string name="login">Iniciar Sesión</string>
-    <string name="title_grupo_list">Grupos</string>
-    <string name="title_grupo_detail">Grupo Detail</string>
-</resources>
