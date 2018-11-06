@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">knowGroup</string>
+    <string name="registro">Registrarse</string>
+    <string name="email">Ingrese Email</string>
+    <string name="contrasena">Ingrese Contrasena</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="title_activity_prueba">prueba</string>
+    <string name="nombre">Nombre Grupo</string>
+    <string name="lugar">Lugar de Estudio</string>
+</resources>
