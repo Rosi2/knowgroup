@@ -1,12 +1,11 @@
 package com.example.hphp.knowgroup;
 
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.example.hphp.knowgroup.dummy.DummyContent;
 
 /**

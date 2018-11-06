@@ -2,9 +2,12 @@ package com.example.hphp.knowgroup;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
-import android.app.ActionBar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 
 /**
  * An activity representing a single Grupo detail screen. This
@@ -12,7 +15,7 @@ import android.view.MenuItem;
  * item details are presented side-by-side with a list of items
  * in a {@link GrupoListActivity}.
  */
-public class GrupoDetailActivity extends Activity {
+public class GrupoDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +43,11 @@ public class GrupoDetailActivity extends Activity {
             Bundle arguments = new Bundle();
             arguments.putString(GrupoDetailFragment.ARG_ITEM_ID,
                     getIntent().getStringExtra(GrupoDetailFragment.ARG_ITEM_ID));
-            GrupoDetailFragment fragment = new GrupoDetailFragment();
+            Fragment fragment = new GrupoDetailFragment();
             fragment.setArguments(arguments);
-            getFragmentManager().beginTransaction()
-                    .add(R.id.grupo_detail_container, fragment)
+            android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.add(R.id.grupo_detail_container, fragment)
                     .commit();
         }
     }
