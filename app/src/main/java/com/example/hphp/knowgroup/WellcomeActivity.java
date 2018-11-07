@@ -35,7 +35,7 @@ public class WellcomeActivity extends AppCompatActivity {
                 seleccionado1 = boton1.getText().toString();
                 grupos p1 = new grupos(seleccionado1);
                 //String id=databaseReference.push().getKey();
-                databaseReference.child(Integer.toString(MainActivity.contador)).child("Primero").setValue(seleccionado1);
+                databaseReference.child(Integer.toString(MainActivity.contador)).child("Asignatura").setValue(seleccionado1);
                 Intent myintent = new Intent(getApplicationContext(),panel.class);
                 startActivity(myintent);
 
@@ -47,7 +47,7 @@ public class WellcomeActivity extends AppCompatActivity {
                 seleccionado1 = boton2.getText().toString();
                 grupos p1 = new grupos(seleccionado1);
                 //String id=databaseReference.push().getKey();
-                databaseReference.child(Integer.toString(MainActivity.contador)).child("Primero").setValue(seleccionado1);
+                databaseReference.child(Integer.toString(MainActivity.contador)).child("Asignatura").setValue(seleccionado1);
                 Intent myintent = new Intent(getApplicationContext(),panel.class);
                 startActivity(myintent);
 
@@ -59,7 +59,7 @@ public class WellcomeActivity extends AppCompatActivity {
                 seleccionado1 = boton3.getText().toString();
                 grupos p1 = new grupos(seleccionado1);
                 //String id=databaseReference.push().getKey();
-                databaseReference.child(Integer.toString(MainActivity.contador)).child("Primero").setValue(seleccionado1);
+                databaseReference.child(Integer.toString(MainActivity.contador)).child("Asignatura").setValue(seleccionado1);
                 Intent myintent = new Intent(getApplicationContext(),panel.class);
                 startActivity(myintent);
 
@@ -71,7 +71,7 @@ public class WellcomeActivity extends AppCompatActivity {
                 seleccionado1 = boton4.getText().toString();
                 grupos p1 = new grupos(seleccionado1);
                 //String id=databaseReference.push().getKey();
-                databaseReference.child(Integer.toString(MainActivity.contador)).child("Primero").setValue(seleccionado1);
+                databaseReference.child(Integer.toString(MainActivity.contador)).child("Asignatura").setValue(seleccionado1);
                 Intent myintent = new Intent(getApplicationContext(),panel.class);
                 startActivity(myintent);
 

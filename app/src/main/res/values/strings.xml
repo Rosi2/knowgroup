@@ -7,4 +7,19 @@
     <string name="title_activity_prueba">prueba</string>
     <string name="nombre">Nombre Grupo</string>
     <string name="lugar">Lugar de Estudio</string>
+
+    <string-array name="countries_array">
+        <item>Programación (IWI-131)</item>
+        <item>Matemáticas I (MAT-021)</item>
+        <item>Introducción a la Física (FIS-100)</item>
+        <item>Química y Sociedad (QUI-010)</item>
+        <item>Matemáticas II (MAT-022)</item>
+        <item>Física General I (FIS-110)</item>
+        <item>Introducción a la Ingeniería (IWG-101)</item>
+        <item>Estructura de Datos (INF-134)</item>
+        <item>Matemáticas III (MAT-023)</item>
+        <item>Física General III (FIS-130)</item>
+        <item>Estructuras Discretas (INF-152)</item>
+        <item>Teoría de Sistemas (INF-260)</item>
+    </string-array>
 </resources>

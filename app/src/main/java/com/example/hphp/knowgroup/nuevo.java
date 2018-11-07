@@ -16,7 +16,7 @@ public class nuevo extends AppCompatActivity {
     TextView txtUser;
     DatabaseReference databaseReference;
     Button boton1;
-    String seleccionado;
+    String seleccionado, seleccionado1;
     private EditText nombre, lugar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +34,13 @@ public class nuevo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 seleccionado = nombre.getText().toString();
+                seleccionado1 = lugar.getText().toString();
                 grupos p1 = new grupos(seleccionado);
                 //String id=databaseReference.push().getKey();
-                databaseReference.child(Integer.toString(MainActivity.contador)).child("Grupo").setValue(seleccionado);
-                Intent myintent = new Intent(getApplicationContext(),WellcomeActivity.class);
+                databaseReference.child(ListaRamos.pais).child(Integer.toString(MainActivity.contador)).child("nombre").setValue(seleccionado);
+                databaseReference.child(ListaRamos.pais).child(Integer.toString(MainActivity.contador)).child("lugar").setValue(seleccionado1);
+                MainActivity.contador+=1;
+                Intent myintent = new Intent(getApplicationContext(),ListaRamos.class);
                 startActivity(myintent);
 
             }

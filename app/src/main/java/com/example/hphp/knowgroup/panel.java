@@ -25,7 +25,7 @@ public class panel extends AppCompatActivity {
         databaseReference= FirebaseDatabase.getInstance().getReference();
         txtUser =(TextView)findViewById(R.id.textser);
         String user = getIntent().getStringExtra("names");
-        txtUser.setText("Bienvenido a "+ WellcomeActivity.seleccionado1);
+        txtUser.setText(ListaRamos.pais);
 
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,5 +39,7 @@ public class panel extends AppCompatActivity {
 
             }
         });
+
+
     }
 }
