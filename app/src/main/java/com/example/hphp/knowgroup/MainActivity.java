@@ -14,6 +14,12 @@ import android.support.design.button.MaterialButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.EditText;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnRegistrar, btnLogin;
     private ProgressDialog progressDialog;
     public static int contador=1;
+
+    EditText mEtPwd;
+    CheckBox mCbShowPwd;
 
 
     //Declaramos un objeto firebaseAuth
@@ -61,6 +70,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //attaching listener to button
         btnRegistrar.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
+
+        mEtPwd = (EditText) findViewById(R.id.contrasena);
+        mCbShowPwd = (CheckBox) findViewById(R.id.checkBox2);
+        // add onCheckedListener on checkbox
+        // when user clicks on this checkbox, this is the handler.
+        mCbShowPwd.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // checkbox status is changed from uncheck to checked.
+                if (!isChecked) {
+                    // show password
+                    mEtPwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                } else {
+                    // hide password
+                    mEtPwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+            }
+        });
+
     }
 
     private void registrarUsuario(){
