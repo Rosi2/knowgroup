@@ -38,6 +38,7 @@ public class nuevo extends AppCompatActivity {
                 grupos p1 = new grupos(seleccionado);
                 //String id=databaseReference.push().getKey();
                 //databaseReference.child(ListaRamos.pais).child(Integer.toString(MainActivity.contador)).child("nombre").setValue(seleccionado);
+                databaseReference.child(ListaRamos.pais).child(seleccionado).child("nombre").setValue(seleccionado);
                 databaseReference.child(ListaRamos.pais).child(seleccionado).child("lugar").setValue(seleccionado1);
                 MainActivity.contador+=1;
                 Intent myintent = new Intent(getApplicationContext(),ListaRamos.class);
